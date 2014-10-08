@@ -5,15 +5,17 @@
 %endif
 
 Name:             python-saharaclient
-Version:          0.7.0
-Release:          4%{?dist}
+Version:          0.7.4
+Release:          1%{?dist}
 Provides:         python-savannaclient = %{version}-%{release}
 Obsoletes:        python-savannaclient <= 0.5.0-2
 Summary:          Client library for OpenStack Sahara API
 License:          ASL 2.0
 URL:              https://launchpad.net/sahara
 Source0:          http://tarballs.openstack.org/python-saharaclient/python-saharaclient-%{version}.tar.gz
-Patch0001:        0001-remove-runtime-dep-on-python-pbr.patch
+
+Patch0001: 0001-Removing-runtime-dependency-on-python-pbr.patch
+
 BuildArch:        noarch
 
 BuildRequires:    python-setuptools
@@ -37,7 +39,7 @@ Python client library for interacting with OpenStack Sahara API.
 %prep
 %setup -q -n %{name}-%{version}
 
-%patch0001 -p0
+%patch0001 -p1
 
 sed -i s/REDHAT_SAHARACLIENT_VERSION/%{version}/ saharaclient/version.py
 sed -i s/REDHAT_SAHARACLIENT_RELEASE/%{release}/ saharaclient/version.py
@@ -68,6 +70,9 @@ rm -rf test-requirements.txt
 
 
 %changelog
+* Wed Oct 08 2014 Michael McCune <mimccune@redhat.com> 0.7.4-1
+- Update to upstream 0.7.4
+
 * Sat Jun 07 2014 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0.7.0-4
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_21_Mass_Rebuild
 

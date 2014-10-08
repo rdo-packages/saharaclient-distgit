@@ -1,5 +1,16 @@
---- saharaclient/version.py	2014-05-05 09:18:09.682115488 -0400
-+++ saharaclient/version.py	2014-05-05 09:34:46.248635372 -0400
+From ad3b505f63d76ec0e7e6639e4c5f13ef1db5b9ec Mon Sep 17 00:00:00 2001
+From: Michael McCune <mimccune@redhat.com>
+Date: Wed, 8 Oct 2014 13:00:51 -0400
+Subject: [PATCH] Removing runtime dependency on python pbr
+
+---
+ saharaclient/version.py | 14 ++++++++++++--
+ 1 file changed, 12 insertions(+), 2 deletions(-)
+
+diff --git a/saharaclient/version.py b/saharaclient/version.py
+index a1a76c5..8b02f86 100644
+--- a/saharaclient/version.py
++++ b/saharaclient/version.py
 @@ -13,6 +13,16 @@
  # See the License for the specific language governing permissions and
  # limitations under the License.

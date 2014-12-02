@@ -5,7 +5,7 @@
 %endif
 
 Name:             python-saharaclient
-Version:          0.7.4
+Version:          0.7.6
 Release:          1%{?dist}
 Provides:         python-savannaclient = %{version}-%{release}
 Obsoletes:        python-savannaclient <= 0.5.0-2
@@ -70,6 +70,9 @@ rm -rf test-requirements.txt
 
 
 %changelog
+* Tue Dec 02 2014 Jakub Ruzicka <jruzicka@redhat.com> 0.7.6-1
+- Update to upstream 0.7.6
+
 * Wed Oct 08 2014 Michael McCune <mimccune@redhat.com> 0.7.4-1
 - Update to upstream 0.7.4
 

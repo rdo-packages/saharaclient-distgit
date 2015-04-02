@@ -6,7 +6,7 @@
 
 Name:             python-saharaclient
 Version:          0.8.0
-Release:          1%{?dist}
+Release:          2%{?dist}
 Provides:         python-savannaclient = %{version}-%{release}
 Obsoletes:        python-savannaclient <= 0.5.0-2
 Summary:          Client library for OpenStack Sahara API
@@ -27,7 +27,7 @@ BuildRequires:    python-pbr >= 0.6
 Requires:         python-babel
 Requires:         python-iso8601
 Requires:         python-keystoneclient
-Requires:         python-oslo-il8n
+Requires:         python-oslo-i18n
 Requires:         python-oslo-utils
 Requires:         python-netaddr
 Requires:         python-prettytable
@@ -73,6 +73,9 @@ rm -rf test-requirements.txt
 
 
 %changelog
+* Thu Apr 02 2015 Ethan Gafford <egafford@redhat.com> 0.8.0-2
+- Fixing dependency on python-oslo-i18n
+
 * Wed Apr 01 2015 Ethan Gafford <egafford@redhat.com> 0.8.0-1
 - Update to upstream 0.8.0
 

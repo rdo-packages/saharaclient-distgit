@@ -1,9 +1,3 @@
-%if 0%{?rhel} && 0%{?rhel} <= 6
-%{!?__python2: %global __python2 /usr/bin/python2}
-%{!?python2_sitelib: %global python2_sitelib %(%{__python2} -c "from distutils.sysconfig import get_python_lib; print(get_python_lib())")}
-%{!?python2_sitearch: %global python2_sitearch %(%{__python2} -c "from distutils.sysconfig import get_python_lib; print(get_python_lib(1))")}
-%endif
-
 Name:             python-saharaclient
 Version:          0.8.0
 Release:          3%{?dist}
@@ -13,8 +7,6 @@ Summary:          Client library for OpenStack Sahara API
 License:          ASL 2.0
 URL:              https://launchpad.net/sahara
 Source0:          http://tarballs.openstack.org/python-saharaclient/python-saharaclient-%{version}.tar.gz
-
-Patch0001: 0001-Removing-runtime-dependency-on-python-pbr.patch
 
 BuildArch:        noarch
 
@@ -42,13 +34,8 @@ Python client library for interacting with OpenStack Sahara API.
 %prep
 %setup -q -n %{name}-%{version}
 
-%patch0001 -p1
-
-sed -i s/REDHAT_SAHARACLIENT_VERSION/%{version}/ saharaclient/version.py
-sed -i s/REDHAT_SAHARACLIENT_RELEASE/%{release}/ saharaclient/version.py
-
 rm -rf python_saharaclient.egg-info
-rm -rf test-requirements.txt
+rm -rf {,test-}requirements.txt
 
 
 %build
@@ -68,8 +55,8 @@ rm -rf test-requirements.txt
 %files
 %doc LICENSE ChangeLog README.rst
 %{_bindir}/sahara
-%{python_sitelib}/saharaclient
-%{python_sitelib}/*.egg-info
+%{python2_sitelib}/saharaclient
+%{python2_sitelib}/*.egg-info
 
 
 %changelog

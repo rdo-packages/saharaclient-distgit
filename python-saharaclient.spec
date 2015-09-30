@@ -1,6 +1,6 @@
 Name:             python-saharaclient
-Version:          0.8.0
-Release:          3%{?dist}
+Version:          0.11.1
+Release:          1%{?dist}
 Provides:         python-savannaclient = %{version}-%{release}
 Obsoletes:        python-savannaclient <= 0.5.0-2
 Summary:          Client library for OpenStack Sahara API
@@ -13,19 +13,21 @@ BuildArch:        noarch
 BuildRequires:    python-setuptools
 BuildRequires:    python2-devel
 BuildRequires:    python-d2to1
-BuildRequires:    python-pbr >= 0.6
+BuildRequires:    python-pbr >= 1.6
 
 
-Requires:         python-babel
+Requires:         python-babel >= 1.3
+Requires:         python-cliff
 Requires:         python-iso8601
 Requires:         python-keystoneclient
 Requires:         python-oslo-i18n
 Requires:         python-oslo-utils
-Requires:         python-netaddr
+Requires:         python-netaddr >= 0.7.12
+Requires:         python-pbr
 Requires:         python-prettytable
-Requires:         python-requests
-Requires:         python-six
-Requires:         python-setuptools
+Requires:         python-requests >= 2.5.2
+Requires:         python-six >= 1.9.0
+
 
 %description
 Python client library for interacting with OpenStack Sahara API.
@@ -60,6 +62,9 @@ rm -rf {,test-}requirements.txt
 
 
 %changelog
+* Wed Sep 30 2015 Haikel Guemar <hguemar@fedoraproject.org> 0.11.1-1
+- Update to upstream 0.11.1
+
 * Thu Jun 18 2015 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0.8.0-3
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_23_Mass_Rebuild
 

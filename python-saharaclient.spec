@@ -1,6 +1,6 @@
 Name:             python-saharaclient
 Version:          0.11.1
-Release:          1%{?dist}
+Release:          2%{?dist}
 Provides:         python-savannaclient = %{version}-%{release}
 Obsoletes:        python-savannaclient <= 0.5.0-2
 Summary:          Client library for OpenStack Sahara API
@@ -21,6 +21,7 @@ Requires:         python-cliff
 Requires:         python-iso8601
 Requires:         python-keystoneclient
 Requires:         python-oslo-i18n
+Requires:         python-oslo-log
 Requires:         python-oslo-utils
 Requires:         python-netaddr >= 0.7.12
 Requires:         python-pbr
@@ -62,6 +63,9 @@ rm -rf {,test-}requirements.txt
 
 
 %changelog
+* Thu Jan 14 2016 Haïkel Guémar <hguemar@fedoraproject.org> - 0.11.1-2
+- Add missing runtime dep on python-oslo-log
+
 * Wed Sep 30 2015 Haikel Guemar <hguemar@fedoraproject.org> 0.11.1-1
 - Update to upstream 0.11.1
 

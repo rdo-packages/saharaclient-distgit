@@ -94,13 +94,12 @@ rm -rf {,test-}requirements.txt
 %if 0%{?with_python3}
 %py3_install
 mv %{buildroot}%{_bindir}/sahara %{buildroot}%{_bindir}/sahara-%{python3_version}
+ln -s ./sahara-%{python3_version} %{buildroot}%{_bindir}/sahara-3
 %endif
 
 %py2_install
 mv %{buildroot}%{_bindir}/sahara %{buildroot}%{_bindir}/sahara-%{python2_version}
-
 ln -s ./sahara-%{python2_version} %{buildroot}%{_bindir}/sahara-2
-ln -s ./sahara-%{python3_version} %{buildroot}%{_bindir}/sahara-3
 
 ln -s ./sahara-2 %{buildroot}%{_bindir}/sahara
 

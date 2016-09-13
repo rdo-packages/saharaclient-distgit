@@ -25,11 +25,12 @@ BuildRequires:    python2-devel
 BuildRequires:    python-d2to1
 BuildRequires:    python-pbr >= 1.6
 
-Requires:         python-babel >= 1.3
+Requires:         python-babel >= 2.3.4
 Requires:         python-cliff
 Requires:         python2-iso8601
-Requires:         python-keystoneauth1 >= 2.1.0
+Requires:         python-keystoneauth1 >= 2.10.0
 Requires:         python-keystoneclient
+Requires:         python-osc-lib >= 1.0.2
 Requires:         python-oslo-i18n
 Requires:         python-oslo-log
 Requires:         python-oslo-serialization >= 1.10.0
@@ -54,11 +55,12 @@ BuildRequires:    python3-devel
 BuildRequires:    python3-d2to1
 BuildRequires:    python3-pbr >= 1.6
 
-Requires:         python3-babel >= 1.3
+Requires:         python3-babel >= 2.3.4
 Requires:         python3-cliff
 Requires:         python3-iso8601
-Requires:         python3-keystoneauth1 >= 2.1.0
+Requires:         python3-keystoneauth1 >= 2.10.0
 Requires:         python3-keystoneclient
+Requires:         python3-osc-lib >= 1.0.2
 Requires:         python3-oslo-i18n
 Requires:         python3-oslo-log
 Requires:         python3-oslo-serialization >= 1.10.0

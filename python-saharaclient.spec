@@ -6,8 +6,8 @@
 %endif
 
 Name:             python-saharaclient
-Version:          0.14.0
-Release:          2%{?dist}
+Version:          0.14.1
+Release:          1%{?dist}
 Summary:          Client library for OpenStack Sahara API
 License:          ASL 2.0
 URL:              https://launchpad.net/sahara
@@ -131,6 +131,9 @@ ln -s ./sahara-2 %{buildroot}%{_bindir}/sahara
 
 
 %changelog
+* Tue Sep 13 2016 Haikel Guemar <hguemar@fedoraproject.org> 0.14.1-1
+- Update to 0.14.1
+
 * Thu Jun 23 2016 Haïkel Guémar <hguemar@fedoraproject.org> - 0.14.0-2
 - Conditionalize python3 on Fedora only
 - Update requirements

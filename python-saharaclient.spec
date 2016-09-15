@@ -11,7 +11,7 @@ Release:          XXX
 Summary:          Client library for OpenStack Sahara API
 License:          ASL 2.0
 URL:              https://launchpad.net/sahara
-Source0:          http://tarballs.openstack.org/python-saharaclient/python-saharaclient-%{upstream_version}.tar.gz
+Source0:          https://tarballs.openstack.org/python-saharaclient/python-saharaclient-%{upstream_version}.tar.gz
 
 BuildArch:        noarch
 

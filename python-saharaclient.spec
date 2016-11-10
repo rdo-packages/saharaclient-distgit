@@ -95,15 +95,9 @@ rm -rf {,test-}requirements.txt
 %install
 %if 0%{?with_python3}
 %py3_install
-mv %{buildroot}%{_bindir}/sahara %{buildroot}%{_bindir}/sahara-%{python3_version}
-ln -s ./sahara-%{python3_version} %{buildroot}%{_bindir}/sahara-3
 %endif
 
 %py2_install
-mv %{buildroot}%{_bindir}/sahara %{buildroot}%{_bindir}/sahara-%{python2_version}
-ln -s ./sahara-%{python2_version} %{buildroot}%{_bindir}/sahara-2
-
-ln -s ./sahara-2 %{buildroot}%{_bindir}/sahara
 
 %check
 # Building on koji with virtualenv requires test-requirements.txt and this
@@ -115,9 +109,6 @@ ln -s ./sahara-2 %{buildroot}%{_bindir}/sahara
 %files -n python2-%{sname}
 %license LICENSE
 %doc ChangeLog README.rst HACKING.rst
-%{_bindir}/sahara
-%{_bindir}/sahara-2
-%{_bindir}/sahara-%{python2_version}
 %{python2_sitelib}/saharaclient
 %{python2_sitelib}/*.egg-info
 
@@ -125,8 +116,6 @@ ln -s ./sahara-2 %{buildroot}%{_bindir}/sahara
 %files -n python3-%{sname}
 %license LICENSE
 %doc ChangeLog README.rst HACKING.rst
-%{_bindir}/sahara-3
-%{_bindir}/sahara-%{python3_version}
 %{python3_sitelib}/saharaclient
 %{python3_sitelib}/*.egg-info
 %endif

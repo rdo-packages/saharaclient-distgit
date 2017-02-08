@@ -6,8 +6,8 @@
 %endif
 
 Name:             python-saharaclient
-Version:          XXX
-Release:          XXX
+Version:          1.1.0
+Release:          1%{?dist}
 Summary:          Client library for OpenStack Sahara API
 License:          ASL 2.0
 URL:              https://launchpad.net/sahara
@@ -124,3 +124,6 @@ rm -rf {,test-}requirements.txt
 
 
 %changelog
+* Wed Feb 08 2017 Alfredo Moralejo <amoralej@redhat.com> 1.1.0-1
+- Update to 1.1.0
+

@@ -23,22 +23,17 @@ Summary:	Client library for OpenStack Sahara API
 BuildRequires:    python-setuptools
 BuildRequires:    python2-devel
 BuildRequires:    python-d2to1
-BuildRequires:    python-pbr >= 1.6
+BuildRequires:    python-pbr >= 2.0.0
 
 Requires:         python-babel >= 2.3.4
-Requires:         python-cliff
-Requires:         python2-iso8601
-Requires:         python-keystoneauth1 >= 2.18.0
-Requires:         python-keystoneclient
+Requires:         python-keystoneauth1 >= 3.1.0
 Requires:         python-openstackclient >= 3.3.0
-Requires:         python-osc-lib >= 1.2.0
+Requires:         python-osc-lib >= 1.7.0
 Requires:         python-oslo-i18n >= 2.1.0
-Requires:         python-oslo-log >= 3.11.0
+Requires:         python-oslo-log >= 3.22.0
 Requires:         python-oslo-serialization >= 1.10.0
-Requires:         python-oslo-utils >= 3.18.0
-Requires:         python-netaddr >= 0.7.12
+Requires:         python-oslo-utils >= 3.20.0
 Requires:         python-pbr
-Requires:         python-prettytable
 Requires:         python-requests >= 2.10.0
 Requires:         python-six >= 1.9.0
 
@@ -54,22 +49,17 @@ Summary:	Client library for OpenStack Sahara API
 BuildRequires:    python3-setuptools
 BuildRequires:    python3-devel
 BuildRequires:    python3-d2to1
-BuildRequires:    python3-pbr >= 1.6
+BuildRequires:    python3-pbr >= 2.0.0
 
 Requires:         python3-babel >= 2.3.4
-Requires:         python3-cliff
-Requires:         python3-iso8601
-Requires:         python3-keystoneauth1 >= 2.18.0
-Requires:         python3-keystoneclient
+Requires:         python3-keystoneauth1 >= 3.1.0
 Requires:         python3-openstackclient >= 3.3.0
-Requires:         python3-osc-lib >= 1.2.0
+Requires:         python3-osc-lib >= 1.7.0
 Requires:         python3-oslo-i18n >= 2.1.0
-Requires:         python3-oslo-log >= 3.11.0
+Requires:         python3-oslo-log >= 3.22.0
 Requires:         python3-oslo-serialization >= 1.10.0
-Requires:         python3-oslo-utils >= 3.18.0
-Requires:         python3-netaddr >= 0.7.12
+Requires:         python3-oslo-utils >= 3.20.0
 Requires:         python3-pbr
-Requires:         python3-prettytable
 Requires:         python3-requests >= 2.10.0
 Requires:         python3-six >= 1.9.0
 

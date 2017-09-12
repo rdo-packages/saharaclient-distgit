@@ -24,6 +24,20 @@ BuildRequires:    python-setuptools
 BuildRequires:    python2-devel
 BuildRequires:    python-d2to1
 BuildRequires:    python-pbr >= 2.0.0
+# test requirements
+BuildRequires:    python-os-testr
+BuildRequires:    python-oslotest
+BuildRequires:    python-requests-mock
+BuildRequires:    python-reno
+BuildRequires:    python-openstackdocstheme
+BuildRequires:    python-mock
+BuildRequires:    python-sphinx
+BuildRequires:    python-testrepository
+BuildRequires:    python-oslo-serialization
+BuildRequires:    python-oslo-log
+BuildRequires:    python-osc-lib
+BuildRequires:    python-osc-lib-tests
+BuildRequires:    python-testtools
 
 Requires:         python-babel >= 2.3.4
 Requires:         python-keystoneauth1 >= 3.1.0
@@ -92,11 +106,7 @@ rm -rf {,test-}requirements.txt
 %py2_install
 
 %check
-# Building on koji with virtualenv requires test-requirements.txt and this
-# causes errors when trying to resolve the package names, also turning on pep8
-# results in odd exceptions from flake8.
-# TODO mimccune fix up unittests
-# sh run_tests.sh --no-virtual-env --no-pep8
+%{__python2} setup.py test
 
 %files -n python2-%{sname}
 %license LICENSE

@@ -20,22 +20,22 @@ Python client library for interacting with OpenStack Sahara API.
 
 %package -n python2-%{sname}
 Summary:	Client library for OpenStack Sahara API
-BuildRequires:    python-setuptools
+BuildRequires:    python2-setuptools
 BuildRequires:    python2-devel
 BuildRequires:    python-d2to1
-BuildRequires:    python-pbr >= 2.0.0
+BuildRequires:    python2-pbr >= 2.0.0
 
-Requires:         python-babel >= 2.3.4
-Requires:         python-keystoneauth1 >= 3.1.0
-Requires:         python-openstackclient >= 3.3.0
-Requires:         python-osc-lib >= 1.7.0
-Requires:         python-oslo-i18n >= 2.1.0
-Requires:         python-oslo-log >= 3.22.0
-Requires:         python-oslo-serialization >= 1.10.0
-Requires:         python-oslo-utils >= 3.20.0
-Requires:         python-pbr
-Requires:         python-requests >= 2.10.0
-Requires:         python-six >= 1.9.0
+Requires:         python2-babel >= 2.3.4
+Requires:         python2-keystoneauth1 >= 3.3.0
+Requires:         python2-openstackclient >= 3.12.0
+Requires:         python2-osc-lib >= 1.8.0
+Requires:         python2-oslo-i18n >= 3.15.3
+Requires:         python2-oslo-log >= 3.36.0
+Requires:         python2-oslo-serialization >= 2.18.0
+Requires:         python2-oslo-utils >= 3.33.0
+Requires:         python2-pbr
+Requires:         python2-requests >= 2.14.2
+Requires:         python2-six >= 1.10.0
 
 
 %{?python_provide:%python_provide python2-%{sname}}
@@ -52,16 +52,16 @@ BuildRequires:    python3-d2to1
 BuildRequires:    python3-pbr >= 2.0.0
 
 Requires:         python3-babel >= 2.3.4
-Requires:         python3-keystoneauth1 >= 3.1.0
-Requires:         python3-openstackclient >= 3.3.0
-Requires:         python3-osc-lib >= 1.7.0
-Requires:         python3-oslo-i18n >= 2.1.0
-Requires:         python3-oslo-log >= 3.22.0
-Requires:         python3-oslo-serialization >= 1.10.0
-Requires:         python3-oslo-utils >= 3.20.0
+Requires:         python3-keystoneauth1 >= 3.3.0
+Requires:         python3-openstackclient >= 3.12.0
+Requires:         python3-osc-lib >= 1.8.0
+Requires:         python3-oslo-i18n >= 3.15.3
+Requires:         python3-oslo-log >= 3.36.0
+Requires:         python3-oslo-serialization >= 2.18.0
+Requires:         python3-oslo-utils >= 3.33.0
 Requires:         python3-pbr
-Requires:         python3-requests >= 2.10.0
-Requires:         python3-six >= 1.9.0
+Requires:         python3-requests >= 2.14.2
+Requires:         python3-six >= 1.10.0
 
 %{?python_provide:%python_provide python3-%{sname}}
 

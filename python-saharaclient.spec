@@ -114,3 +114,4 @@ rm -rf {,test-}requirements.txt
 
 
 %changelog
+# REMOVEME: error caused by commit http://git.openstack.org/cgit/openstack/python-saharaclient/commit/?id=1d5feee35142c8f906554b2ab8fafaf66482d521

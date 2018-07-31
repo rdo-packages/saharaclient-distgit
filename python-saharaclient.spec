@@ -26,14 +26,14 @@ BuildRequires:    python-d2to1
 BuildRequires:    python2-pbr >= 2.0.0
 
 Requires:         python2-babel >= 2.3.4
-Requires:         python2-keystoneauth1 >= 3.3.0
+Requires:         python2-keystoneauth1 >= 3.4.0
 Requires:         python2-openstackclient >= 3.12.0
-Requires:         python2-osc-lib >= 1.8.0
+Requires:         python2-osc-lib >= 1.11.0
 Requires:         python2-oslo-i18n >= 3.15.3
 Requires:         python2-oslo-log >= 3.36.0
 Requires:         python2-oslo-serialization >= 2.18.0
 Requires:         python2-oslo-utils >= 3.33.0
-Requires:         python2-pbr
+Requires:         python2-pbr >= 2.0.0
 Requires:         python2-requests >= 2.14.2
 Requires:         python2-six >= 1.10.0
 
@@ -52,14 +52,14 @@ BuildRequires:    python3-d2to1
 BuildRequires:    python3-pbr >= 2.0.0
 
 Requires:         python3-babel >= 2.3.4
-Requires:         python3-keystoneauth1 >= 3.3.0
+Requires:         python3-keystoneauth1 >= 3.4.0
 Requires:         python3-openstackclient >= 3.12.0
-Requires:         python3-osc-lib >= 1.8.0
+Requires:         python3-osc-lib >= 1.11.0
 Requires:         python3-oslo-i18n >= 3.15.3
 Requires:         python3-oslo-log >= 3.36.0
 Requires:         python3-oslo-serialization >= 2.18.0
 Requires:         python3-oslo-utils >= 3.33.0
-Requires:         python3-pbr
+Requires:         python3-pbr >= 2.0.0
 Requires:         python3-requests >= 2.14.2
 Requires:         python3-six >= 1.10.0
 

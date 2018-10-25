@@ -31,7 +31,19 @@ Python client library for interacting with OpenStack Sahara API.
 Summary:	Client library for OpenStack Sahara API
 BuildRequires:    python%{pyver}-setuptools
 BuildRequires:    python%{pyver}-devel
+BuildRequires:    python%{pyver}-mock >= 2.0.0
+BuildRequires:    python%{pyver}-osc-lib >= 1.11.0
+BuildRequires:    python%{pyver}-osc-lib-tests >= 1.11.0
+BuildRequires:    python%{pyver}-oslotest >= 3.2.0
+BuildRequires:    python%{pyver}-oslo-log >= 3.36.0
+BuildRequires:    python%{pyver}-oslo-serialization >= 2.18.0
 BuildRequires:    python%{pyver}-pbr >= 2.0.0
+%if %{pyver} == 2
+BuildRequires:    python-requests-mock >= 1.2.0
+%else
+BuildRequires:    python%{pyver}-requests-mock >= 1.2.0
+%endif
+BuildRequires:    python%{pyver}-stestr >= 1.0.0
 
 Requires:         python%{pyver}-babel >= 2.3.4
 Requires:         python%{pyver}-keystoneauth1 >= 3.4.0
@@ -61,7 +73,7 @@ Python client library for interacting with OpenStack Sahara API.
 %setup -q -n %{name}-%{upstream_version}
 
 rm -rf python_saharaclient.egg-info
-rm -rf {,test-}requirements.txt
+%py_req_cleanup
 
 %build
 %{pyver_build}
@@ -71,11 +83,9 @@ rm -rf {,test-}requirements.txt
 %{pyver_install}
 
 %check
-# Building on koji with virtualenv requires test-requirements.txt and this
-# causes errors when trying to resolve the package names, also turning on pep8
-# results in odd exceptions from flake8.
-# TODO mimccune fix up unittests
-# sh run_tests.sh --no-virtual-env --no-pep8
+# Remove hacking tests, we don't need them
+rm saharaclient/tests/unit/test_hacking.py
+stestr-%{pyver} run
 
 %files -n python%{pyver}-%{sname}
 %license LICENSE

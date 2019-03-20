@@ -6,7 +6,7 @@
 %endif
 
 Name:             python-saharaclient
-Version:          1.3.0
+Version:          1.3.1
 Release:          1%{?dist}
 Summary:          Client library for OpenStack Sahara API
 License:          ASL 2.0
@@ -114,6 +114,9 @@ rm -rf {,test-}requirements.txt
 
 
 %changelog
+* Wed Mar 20 2019 RDO <dev@lists.rdoproject.org> 1.3.1-1
+- Update to 1.3.1
+
 * Mon Aug 21 2017 Alfredo Moralejo <amoralej@redhat.com> 1.3.0-1
 - Update to 1.3.0
 

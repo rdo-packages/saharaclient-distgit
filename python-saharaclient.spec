@@ -86,6 +86,7 @@ rm -rf python_saharaclient.egg-info
 %check
 # Remove hacking tests, we don't need them
 rm saharaclient/tests/unit/test_hacking.py
+export PYTHON=%{pyver_bin}
 stestr-%{pyver} run
 
 %files -n python%{pyver}-%{sname}

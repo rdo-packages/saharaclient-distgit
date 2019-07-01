@@ -15,7 +15,7 @@
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
 Name:             python-saharaclient
-Version:          2.2.0
+Version:          2.2.1
 Release:          1%{?dist}
 Summary:          Client library for OpenStack Sahara API
 License:          ASL 2.0
@@ -95,6 +95,9 @@ stestr-%{pyver} run
 %{pyver_sitelib}/*.egg-info
 
 %changelog
+* Mon Jul 01 2019 RDO <dev@lists.rdoproject.org> 2.2.1-1
+- Update to 2.2.1
+
 * Mon Mar 11 2019 RDO <dev@lists.rdoproject.org> 2.2.0-1
 - Update to 2.2.0
 

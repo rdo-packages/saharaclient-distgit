@@ -58,13 +58,6 @@ Requires:         python%{pyver}-pbr >= 2.0.0
 Requires:         python%{pyver}-requests >= 2.14.2
 Requires:         python%{pyver}-six >= 1.10.0
 
-# Handle python2 exception
-%if %{pyver} == 2
-BuildRequires:    python-d2to1
-%else
-BuildRequires:    python%{pyver}-d2to1
-%endif
-
 %{?python_provide:%python_provide python%{pyver}-%{sname}}
 
 %description -n python%{pyver}-%{sname}

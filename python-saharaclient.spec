@@ -48,8 +48,8 @@ BuildRequires:    python%{pyver}-stestr >= 1.0.0
 
 Requires:         python%{pyver}-babel >= 2.3.4
 Requires:         python%{pyver}-keystoneauth1 >= 3.4.0
-Requires:         python%{pyver}-openstackclient >= 3.12.0
-Requires:         python%{pyver}-osc-lib >= 1.11.0
+Requires:         python%{pyver}-openstackclient >= 5.2.0
+Requires:         python%{pyver}-osc-lib >= 2.0.0
 Requires:         python%{pyver}-oslo-i18n >= 3.15.3
 Requires:         python%{pyver}-oslo-log >= 3.36.0
 Requires:         python%{pyver}-oslo-serialization >= 2.18.0

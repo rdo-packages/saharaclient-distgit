@@ -31,7 +31,6 @@ BuildRequires:    python3-pbr >= 2.0.0
 BuildRequires:    python3-requests-mock >= 1.2.0
 BuildRequires:    python3-stestr >= 1.0.0
 
-Requires:         python3-babel >= 2.3.4
 Requires:         python3-keystoneauth1 >= 3.4.0
 Requires:         python3-openstackclient >= 5.2.0
 Requires:         python3-osc-lib >= 2.0.0

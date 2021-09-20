@@ -1,13 +1,13 @@
 %{!?sources_gpg: %{!?dlrn:%global sources_gpg 1} }
-%global sources_gpg_sign 0x2426b928085a020d8a90d0d879ab7008d0896c8a
+%global sources_gpg_sign 0x4c29ff0e437f3351fd82bdf47c5a3bc787dc7035
 %global sname saharaclient
 
 
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
 Name:             python-saharaclient
-Version:          XXX
-Release:          XXX
+Version:          3.4.0
+Release:          1%{?dist}
 Summary:          Client library for OpenStack Sahara API
 License:          ASL 2.0
 URL:              https://launchpad.net/sahara
@@ -90,3 +90,6 @@ stestr-3 run
 %{python3_sitelib}/*.egg-info
 
 %changelog
+* Mon Sep 20 2021 RDO <dev@lists.rdoproject.org> 3.4.0-1
+- Update to 3.4.0
+

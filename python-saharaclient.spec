@@ -93,3 +93,4 @@ stestr-3 run
 * Mon Sep 20 2021 RDO <dev@lists.rdoproject.org> 3.4.0-1
 - Update to 3.4.0
 
+# REMOVEME: error caused by commit https://opendev.org/openstack/python-saharaclient/commit/473ad0dd95433b6bead20eb290d3f29800c523b7

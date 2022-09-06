@@ -40,20 +40,18 @@ BuildRequires:    python3-osc-lib-tests >= 1.11.0
 BuildRequires:    python3-oslotest >= 3.2.0
 BuildRequires:    python3-oslo-log >= 3.36.0
 BuildRequires:    python3-oslo-serialization >= 2.18.0
-BuildRequires:    python3-pbr >= 2.0.0
+BuildRequires:    python3-pbr >= 3.1.1
 BuildRequires:    python3-requests-mock >= 1.2.0
 BuildRequires:    python3-stestr >= 1.0.0
 
 Requires:         python3-keystoneauth1 >= 3.4.0
 Requires:         python3-openstackclient >= 5.2.0
 Requires:         python3-osc-lib >= 2.0.0
-Requires:         python3-oslo-i18n >= 3.15.3
-Requires:         python3-oslo-log >= 3.36.0
-Requires:         python3-oslo-serialization >= 2.18.0
+Requires:         python3-oslo-i18n >= 3.20.0
+Requires:         python3-oslo-log >= 5.0.0
+Requires:         python3-oslo-serialization >= 2.25.0
 Requires:         python3-oslo-utils >= 3.33.0
-Requires:         python3-pbr >= 2.0.0
 Requires:         python3-requests >= 2.14.2
-Requires:         python3-six >= 1.10.0
 
 %{?python_provide:%python_provide python3-%{sname}}
 

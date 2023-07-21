@@ -4,12 +4,14 @@
 
 
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
+# we are excluding some BRs from automatic generator
+%global excluded_brs doc8 bandit pre-commit hacking flake8-import-order sphinx openstackdocstheme
 
 Name:             python-saharaclient
 Version:          XXX
 Release:          XXX
 Summary:          Client library for OpenStack Sahara API
-License:          ASL 2.0
+License:          Apache-2.0
 URL:              https://launchpad.net/sahara
 Source0:          https://tarballs.openstack.org/python-saharaclient/python-saharaclient-%{upstream_version}.tar.gz
 # Required for tarball sources verification
@@ -30,30 +32,13 @@ BuildRequires:  openstack-macros
 Python client library for interacting with OpenStack Sahara API.
 
 %package -n python3-%{sname}
-Summary:	Client library for OpenStack Sahara API
+Summary: Client library for OpenStack Sahara API
+
 BuildRequires:    openstack-macros
-BuildRequires:    python3-setuptools
 BuildRequires:    python3-devel
-BuildRequires:    python3-mock >= 2.0.0
-BuildRequires:    python3-osc-lib >= 1.11.0
+BuildRequires:    pyproject-rpm-macros
+# Required to run unit tests
 BuildRequires:    python3-osc-lib-tests >= 1.11.0
-BuildRequires:    python3-oslotest >= 3.2.0
-BuildRequires:    python3-oslo-log >= 3.36.0
-BuildRequires:    python3-oslo-serialization >= 2.18.0
-BuildRequires:    python3-pbr >= 3.1.1
-BuildRequires:    python3-requests-mock >= 1.2.0
-BuildRequires:    python3-stestr >= 1.0.0
-
-Requires:         python3-keystoneauth1 >= 3.4.0
-Requires:         python3-openstackclient >= 5.2.0
-Requires:         python3-osc-lib >= 2.0.0
-Requires:         python3-oslo-i18n >= 3.20.0
-Requires:         python3-oslo-log >= 5.0.0
-Requires:         python3-oslo-serialization >= 2.25.0
-Requires:         python3-oslo-utils >= 3.33.0
-Requires:         python3-requests >= 2.14.2
-
-%{?python_provide:%python_provide python3-%{sname}}
 
 %description -n python3-%{sname}
 Python client library for interacting with OpenStack Sahara API.
@@ -65,26 +50,39 @@ Python client library for interacting with OpenStack Sahara API.
 %endif
 %setup -q -n %{name}-%{upstream_version}
 
-rm -rf python_saharaclient.egg-info
-%py_req_cleanup
+sed -i /^[[:space:]]*-c{env:.*_CONSTRAINTS_FILE.*/d tox.ini
+sed -i "s/^deps = -c{env:.*_CONSTRAINTS_FILE.*/deps =/" tox.ini
+sed -i /^minversion.*/d tox.ini
+sed -i /^requires.*virtualenv.*/d tox.ini
+
+# Exclude some bad-known BRs
+for pkg in %{excluded_brs}; do
+  for reqfile in doc/requirements.txt test-requirements.txt; do
+    if [ -f $reqfile ]; then
+      sed -i /^${pkg}.*/d $reqfile
+    fi
+  done
+done
+
+%generate_buildrequires
+%pyproject_buildrequires -t -e %{default_toxenv}
 
 %build
-%{py3_build}
+%pyproject_wheel
 
 
 %install
-%{py3_install}
+%pyproject_install
 
 %check
 # Remove hacking tests, we don't need them
 rm saharaclient/tests/unit/test_hacking.py
-export PYTHON=%{__python3}
-stestr-3 run
+%tox -e %{default_toxenv}
 
 %files -n python3-%{sname}
 %license LICENSE
 %doc ChangeLog README.rst HACKING.rst
 %{python3_sitelib}/saharaclient
-%{python3_sitelib}/*.egg-info
+%{python3_sitelib}/*.dist-info
 
 %changelog

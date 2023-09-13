@@ -1,0 +1,9 @@
+Code-Review+2: Alfredo Moralejo <amoralej@redhat.com>
+Workflow+1: Alfredo Moralejo <amoralej@redhat.com>
+Verified+2: Zuul CI <zuul@review.rdoproject.org>
+Code-Review+2: Luigi Toscano <ltoscano@redhat.com>
+Submitted-by: Zuul CI <zuul@review.rdoproject.org>
+Submitted-at: Wed, 13 Sep 2023 09:23:27 +0000
+Reviewed-on: https://review.rdoproject.org/r/c/openstack/saharaclient-distgit/+/49969
+Project: openstack/saharaclient-distgit
+Branch: refs/heads/rpm-master

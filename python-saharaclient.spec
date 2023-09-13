@@ -1,5 +1,5 @@
 %{!?sources_gpg: %{!?dlrn:%global sources_gpg 1} }
-%global sources_gpg_sign 0x2426b928085a020d8a90d0d879ab7008d0896c8a
+%global sources_gpg_sign 0x815afec729392386480e076dcc0dfe2d21c023c9
 %global sname saharaclient
 
 
@@ -8,8 +8,8 @@
 %global excluded_brs doc8 bandit pre-commit hacking flake8-import-order sphinx openstackdocstheme
 
 Name:             python-saharaclient
-Version:          XXX
-Release:          XXX
+Version:          4.2.0
+Release:          1%{?dist}
 Summary:          Client library for OpenStack Sahara API
 License:          Apache-2.0
 URL:              https://launchpad.net/sahara
@@ -22,7 +22,7 @@ Source102:        https://releases.openstack.org/_static/%{sources_gpg_sign}.txt
 # TODO(jcapitao): remove the condition below once
 # https://review.opendev.org/c/openstack/python-saharaclient/+/894867 is merged and
 # contained in a new tag.
-%if %{lua:print(rpm.vercmp(rpm.expand("%{version}"), '4.2.0'));} >= 0
+%if %{lua:print(rpm.vercmp(rpm.expand("%{version}"), '4.2.0'));} == 0
 Patch0001:        0001-Remove-obsolete-whitelist_externals.patch
 %endif
 
@@ -92,3 +92,6 @@ rm saharaclient/tests/unit/test_hacking.py
 %{python3_sitelib}/*.dist-info
 
 %changelog
+* Wed Sep 13 2023 RDO <dev@lists.rdoproject.org> 4.2.0-1
+- Update to 4.2.0
+

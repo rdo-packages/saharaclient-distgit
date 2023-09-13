@@ -19,6 +19,12 @@ Source0:          https://tarballs.openstack.org/python-saharaclient/python-saha
 Source101:        https://tarballs.openstack.org/python-saharaclient/python-saharaclient-%{upstream_version}.tar.gz.asc
 Source102:        https://releases.openstack.org/_static/%{sources_gpg_sign}.txt
 %endif
+# TODO(jcapitao): remove the condition below once
+# https://review.opendev.org/c/openstack/python-saharaclient/+/894867 is merged and
+# contained in a new tag.
+%if %{lua:print(rpm.vercmp(rpm.expand("%{version}"), '4.2.0'));} >= 0
+Patch0001:        0001-Remove-obsolete-whitelist_externals.patch
+%endif
 
 BuildArch:        noarch
 
@@ -48,7 +54,7 @@ Python client library for interacting with OpenStack Sahara API.
 %if 0%{?sources_gpg} == 1
 %{gpgverify}  --keyring=%{SOURCE102} --signature=%{SOURCE101} --data=%{SOURCE0}
 %endif
-%setup -q -n %{name}-%{upstream_version}
+%autosetup -n %{name}-%{upstream_version}
 
 sed -i /^[[:space:]]*-c{env:.*_CONSTRAINTS_FILE.*/d tox.ini
 sed -i "s/^deps = -c{env:.*_CONSTRAINTS_FILE.*/deps =/" tox.ini

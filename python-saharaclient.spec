@@ -22,7 +22,7 @@ Source102:        https://releases.openstack.org/_static/%{sources_gpg_sign}.txt
 # TODO(jcapitao): remove the condition below once
 # https://review.opendev.org/c/openstack/python-saharaclient/+/894867 is merged and
 # contained in a new tag.
-%if 0%{?dlrn} == 0
+%if %{lua:print(rpm.vercmp(rpm.expand("%{version}"), '4.2.0'));} >= 0
 Patch0001:        0001-Remove-obsolete-whitelist_externals.patch
 %endif
 

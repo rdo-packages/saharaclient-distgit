@@ -1,5 +1,5 @@
 %{!?sources_gpg: %{!?dlrn:%global sources_gpg 1} }
-%global sources_gpg_sign 0x815AFEC729392386480E076DCC0DFE2D21C023C9
+%global sources_gpg_sign 0x815afec729392386480e076dcc0dfe2d21c023c9
 %global sname saharaclient
 
 
@@ -22,7 +22,7 @@ Source102:        https://releases.openstack.org/_static/%{sources_gpg_sign}.txt
 # TODO(jcapitao): remove the condition below once
 # https://review.opendev.org/c/openstack/python-saharaclient/+/894867 is merged and
 # contained in a new tag.
-%if 0%{?dlrn} == 0
+%if %{lua:print(rpm.vercmp(rpm.expand("%{version}"), '4.2.0'));} >= 0
 Patch0001:        0001-Remove-obsolete-whitelist_externals.patch
 %endif
 

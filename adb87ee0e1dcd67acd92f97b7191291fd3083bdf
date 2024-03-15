@@ -34,6 +34,24 @@
       "parentUuid": "05474ede_2a5662e4",
       "revId": "adb87ee0e1dcd67acd92f97b7191291fd3083bdf",
       "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5cfc3e09_d3e7fea3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2024-03-15T11:02:19Z",
+      "side": 1,
+      "message": "the problem is that DLRN-rpmbuild-centos9 job builds from master peak, not the pinned version",
+      "parentUuid": "aa3ea5c7_4ecd6ce2",
+      "revId": "adb87ee0e1dcd67acd92f97b7191291fd3083bdf",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
     }
   ]
 }

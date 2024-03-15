@@ -16,6 +16,24 @@
       "message": "we also need to cherry-pick https://review.rdoproject.org/r/c/openstack/saharaclient-distgit/+/50496",
       "revId": "adb87ee0e1dcd67acd92f97b7191291fd3083bdf",
       "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "aa3ea5c7_4ecd6ce2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2024-03-15T10:51:45Z",
+      "side": 1,
+      "message": "it\u0027s there, coming from base spec.",
+      "parentUuid": "05474ede_2a5662e4",
+      "revId": "adb87ee0e1dcd67acd92f97b7191291fd3083bdf",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
     }
   ]
 }
